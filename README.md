@@ -1,30 +1,33 @@
 # Sai2Rec
-An unofficial recorder for PaintTool SAI 2, supporting window capture, hotkeys, and MP4 export.
 
-这是一个用于录制 PaintTool SAI Ver.2 绘画过程的 Windows 工具。
-程序只读取 SAI2 的画布内存，不写入 SAI2 内存，不注入 DLL，也不会修改原始 .sai2 文件。录制数据保存在程序目录中，完成后可通过 FFmpeg 导出 MP4 视频。
+**One-click drawing timelapse export for PaintTool SAI 2.**
 
-普通用户使用方法
-1. 下载并运行“Sai2Rec-Setup.exe”。
-2. 打开 64 位 PaintTool SAI Ver.2 和需要录制的画布。
-3. 启动 Sai2Rec，点击“连接画布”。
-4. 选择尺寸正确的画布，然后点击 Start。
-5. 绘画完成后点击 Stop。
-6. 设置视频时长和 FPS，点击“导出 MP4”。
-录制文件位于程序目录的 others\recordings 文件夹。
-导出视频位于程序目录的 output 文件夹。
-只有点击“清除缓存”才会删除录制数据。
+Turn your SAI 2 drawing process into an MP4 timelapse with a custom duration and frame rate — no manual screen recording or video editing required.
 
-从源码编译
-系统要求：Windows x64 和 .NET Framework 4.x。
-在 PowerShell 中运行：
-    powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
-编译结果位于 build\Sai2Rec.exe。
-导出视频需要 ffmpeg.exe。安装包已经附带 FFmpeg；自行编译时，可将 ffmpeg.exe 放在程序旁边或 others 文件夹中。
+Sai2Rec is an unofficial Windows tool for recording the drawing process in PaintTool SAI Ver.2. Capture your canvas, finish your artwork, choose your target video duration and FPS, and export your timelapse to MP4.
 
-兼容性说明
-当前画布扫描逻辑按 PaintTool SAI Ver.2 x64 2024.08.14 验证。SAI2 更新后内存结构可能变化，需要重新测试。
+### Features
 
-程序目前按画布名称和尺寸识别录制目录。重命名画布后，可能生成新的录制目录。
-本项目源码使用 GNU General Public License Version 3，详见 LICENSE.txt。
-PaintTool SAI 和 FFmpeg 不属于本项目，分别遵守其自身许可证。
+- **Custom video duration** — choose how long your final timelapse should be.
+- **Custom frame rate** — export at your preferred FPS.
+- **One-click MP4 export** — generate a timelapse without manually editing video speed.
+- **Canvas-aware recording** — connect to a SAI 2 canvas and record the drawing process.
+- **Local recording storage** — recordings are saved locally and retained until you clear the cache.
+- **Windows installer** — get started without building from source.
+
+### Quick start
+
+1. Download and run `Sai2Rec-Setup.exe`.
+2. Open the 64-bit PaintTool SAI Ver.2 and your canvas.
+3. Launch Sai2Rec and click **Connect Canvas**.
+4. Select the correct canvas and click **Start**.
+5. Finish drawing and click **Stop**.
+6. Set your target video duration and FPS, then click **Export MP4**.
+
+### Compatibility
+
+The current canvas scanning logic has been verified with PaintTool SAI Ver.2 x64, version `2024.08.14`. Other versions may require additional testing.
+
+Sai2Rec reads canvas memory and does not write to SAI 2 memory, inject DLLs, or modify original `.sai2` files, according to the project's implementation.
+
+Source code is licensed under GNU GPL v3.
